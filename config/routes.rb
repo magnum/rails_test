@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  concern :apiable do
+    resources :documents, only: [:index]
+  end
+
+  scope "(:locale)", locale: /en|it/ do
+    namespace :api do
+      concerns :apiable
+      namespace :v1 do
+        concerns :apiable
+      end
+    end
+  end
+
   resources :users
   namespace :admin do
       resources :users

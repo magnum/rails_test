@@ -56,3 +56,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "administrate"
+gem 'active_model_serializers'
+gem 'pry', '~> 0.13.1'
+gem 'jwt'
