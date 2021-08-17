@@ -22,4 +22,7 @@ Rails.application.routes.draw do
     end
   resources :documents
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'test/bootstrap', to: "test#bootstrap"
+  get 'test/turbolinks(/:page_id)', to: "test#turbolinks", as: "test_turbolinks"
 end

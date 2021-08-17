@@ -1,0 +1,73 @@
+<!-- inside app/views/welcome/index.html.erb -->  
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <h5 class="text-white h4">Collapsed content</h5>
+    <span class="text-muted">Toggleable via the navbar brand.</span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#test-collapse" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Album example</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Main call to action</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <ul>
+        <% 3.times do |i| %>
+          <li>
+            <%= link_to "link #{i}", "#", "data-bs-toggle": "collapse", "data-bs-target": "#collapse-content-#{i}" %>
+          </li>
+        <% end %>
+      </ul>
+      <% 3.times do |i| %>
+        <div class="collapse multi-collapse" id="collapse-content-<%=i-%>">
+          Maecenas faucibus mollis interdum. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Etiam porta sem malesuada magna mollis euismod.
+        </div>
+      <% end %>
+
+
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="#" data-bs-toggle="collapse"  data-bs-target="#detail1">1</a>
+      </th>
+    <td>Mark</td><td>Otto</td><td>@mdo</td></tr>
+    <tr id="detail1" class="collapse"><td colspan="4">@mdo</td></tr>
+    <tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td><td>@fat</td></tr>
+    <tr><th scope="row">3</th><td>Larry</td><td>the Bird</td><td>@twitter</td></tr>
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</div>
+
