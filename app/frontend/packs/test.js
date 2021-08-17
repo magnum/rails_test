@@ -4,6 +4,11 @@
   https://www.honeybadger.io/blog/turbolinks/
 */
 
+$(() => {
+  //$("body").hide();
+})
+
+
 document.addEventListener("DOMContentLoaded", function() {
   const a = 42;
   console.log("DOMContentLoaded")
