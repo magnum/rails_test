@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :actions
   concern :apiable do
     resources :documents, only: [:index]
   end
@@ -16,8 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :users
       resources :documents
-      
-
+    
       root to: "documents#index"
     end
   resources :documents

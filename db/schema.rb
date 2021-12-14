@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_172357) do
+ActiveRecord::Schema.define(version: 2021_11_26_230145) do
+
+  create_table "actions", force: :cascade do |t|
+    t.text "callback"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "documents", force: :cascade do |t|
     t.string "title"

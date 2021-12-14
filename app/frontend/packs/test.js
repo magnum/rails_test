@@ -13,10 +13,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const a = 42;
   console.log("DOMContentLoaded")
   const link1 = document.getElementById("link1")
-  link1.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log("link1 click")
-  })
+  if(link1){
+    link1.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("link1 click")
+    })
+  }
+
 });
 
 document.addEventListener("turbolinks:load", function() {

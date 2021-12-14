@@ -1,19 +1,30 @@
-<!DOCTYPE html>
-<!-- https://bootrails.com/blog/rails-bootstrap-tutorial -->
-<html>
+
+
+<!doctype html>
+<html lang="en">
   <head>
-    <title>Myapp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Warning !! ensure that "stylesheet_pack_tag" is used, line below -->
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'test', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag :application %>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
   </head>
-
   <body>
-    <%= yield %>
+    <% if content_for? :navbar %>
+      <%= content_for :navbar %>
+    <% end %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

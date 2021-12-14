@@ -59,3 +59,4 @@ gem "administrate"
 gem 'active_model_serializers'
 gem 'pry', '~> 0.13.1'
 gem 'jwt'
+gem 'faktory_worker_ruby'
